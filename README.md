@@ -1,2 +1,2 @@
-# manas
+# Troubleshooter
 Server Troubleshooting Tools
