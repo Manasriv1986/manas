@@ -1,0 +1,33 @@
+Performance Monitor steps :- 
+
+ 
+
+Launch command prompt and run it as an administrator.
+
+ 
+
+Logman.exe create counter PerfLog-Short -o "c:\perflogs\PerfLog-Short.blg " -f bincirc -v mmddhhmm -max 1024 -c "\LogicalDisk(*)\*" "\Memory\*" "\Network Interface(*)\*" "\Paging File(*)\*" "\PhysicalDisk(*)\*" "\Processor(*)\*" "\Process(*)\*" "\Redirector\*" "\Server\*" "\System\*" "\Thread(*)\*" -si 00:00:01
+
+ 
+
+ 
+
+- Start the logs with the following commands:
+
+ 
+
+Logman.exe start PerfLog-Short
+
+ 
+
+ - Please stop the performance logs as soon as the issue returns with the following commands:
+
+ 
+
+Logman.exe stop PerfLog-Short
+
+ 
+
+ 
+
+Please note that these performance logs will need to be started again if the server is rebooted as they do not automatically restart on boot by running the command - Logman.exe start PerfLog-Short

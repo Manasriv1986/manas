@@ -1,0 +1,18 @@
+//run each command one by one and press enter after each command//
+
+
+logman create trace "printscan_print" -ow -o c:\printscan_print.etl -p "Microsoft-Windows-PrintService" 0xffffffffffffffff 0xff -nb 16 16 -bs 1024 -mode Circular -f bincirc -max 4096 -ets
+
+logman update trace "printscan_print" -p {C9BF4A03-D547-4D11-8242-E03A18B5BE01} 0xffffffffffffffff 0xff -ets
+
+logman update trace "printscan_print" -p {C9BF4A9F-D547-4D11-8242-E03A18B5BE01} 0xffffffffffffffff 0xff -ets
+
+logman update trace "printscan_print" -p {C9BF4A9E-D547-4D11-8242-E03A18B5BE01} 0xffffffffffffffff 0xff -ets
+
+logman update trace "printscan_print" -p {C9BF4A05-D547-4D11-8242-E03A18B5BE01} 0xffffffffffffffff 0xff -ets
+
+logman update trace "printscan_print" -p {C9BF4A01-D547-4D11-8242-E03A18B5BE01} 0xffffffffffffffff 0xff -ets
+
+//reproduce issue now, once done run the last command below, upload the .etl file created in C drive//
+
+logman stop "printscan_print" -ets

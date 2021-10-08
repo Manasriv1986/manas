@@ -1,0 +1,26 @@
+procmon and wmi trace
+
+create a backup of the performance counters with LODCTR /S:C:\TEMP\PERF.INI copied to the affected server and we recreated the performance counters with the command LodCtr.exe /R:C:\TEMP\PERF.INI
+
+winmgmt.exe /resyncperf
+
+Recommended to get a Perf-Collect dataset when the issue occurs to check if the performance counters are healthy
+
+Trace name wmi-perftrace.bat
+
+Recommended action plan:
+
+- Start a WMIPerf trace https://microsoft.sharepoint.com/teams/WMI_Troubleshooting/Shared Documents/WMIPerf-Trace.bat.txt
+
+- Restart the WMI service
+
+- Query the class
+
+- When the error is displayed stop the trace
+
+- Get another WMI-Collect dataset
+
+- Engage an SEE for the analysis
+
+clean boot
+

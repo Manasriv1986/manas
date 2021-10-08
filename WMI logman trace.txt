@@ -1,0 +1,13 @@
+Here is the command to start the wmi trace:
+
+logman create trace "admin_wmi" -ow -o c:\admin_wmi.etl -p {1FF6B227-2CA7-40F9-9A66-980EADAA602E} 0xffffffffffffffff 0xff -nb 16 16 -bs 1024 -mode Circular -f bincirc -max 4096 -ets
+logman update trace "admin_wmi" -p "Microsoft-Windows-WMI" 0xffffffffffffffff 0xff -ets
+logman update trace "admin_wmi" -p "Microsoft-Windows-WMI-Activity" 0xffffffffffffffff 0xff -ets
+logman update trace "admin_wmi" -p {1FF6B227-2CA7-40F9-9A66-980EADAA602E} 0xffffffffffffffff 0xff -ets
+logman update trace "admin_wmi" -p {8E6B6962-AB54-4335-8229-3255B919DD0E} 0xffffffffffffffff 0xff -ets
+logman update trace "admin_wmi" -p "Microsoft-Windows-WMIAdapter" 0xffffffffffffffff 0xff -ets
+
+
+Here is the command to stop the wmi trace:
+
+logman stop "admin_wmi" –ets
