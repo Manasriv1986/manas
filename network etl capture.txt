@@ -1,5 +1,0 @@
-1.	Open an elevated command prompt and run:
-a.	netsh trace start scenario =netconnection capture =yes report =yes maxSize =512 fileMode =circular persistent =yes
-2.	Reproduce the issue
-3.	Now type on same cmd netsh trace stop
-4.	Your trace will be stored in c:\temp\nettrace-boot.etl**or where ever you saved it.
